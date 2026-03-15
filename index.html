@@ -218,21 +218,21 @@
   const BASE_PATH = "C-T2M_trainings";
   const NUM_TRAININGS = 15;
   const TRAINING_DESCRIPTIONS = [
-    "", // Training 1
-    "", // Training 2
-    "", // Training 3
-    "", // Training 4
-    "", // Training 5
-    "", // Training 6
-    "", // Training 7
-    "", // Training 8
-    "", // Training 9
-    "", // Training 10
-    "", // Training 11
-    "", // Training 12
-    "", // Training 13
-    "", // Training 14
-    "", // Training 15
+    "full teacher forcing (TF)", // Training 1
+    "TF ratio to 0.0", // Training 2
+    "TF ratio to 0.2", // Training 3
+    "λ_vel = 5.0", // Training 4
+    "λ_vel = 1.0", // Training 5
+    "λ_lang = 0.1", // Training 6
+    "λ_sem = 5.0", // Training 7
+    "λ_sem = 10.0", // Training 8
+    "λ_vel = 5.0, CFG enabled", // Training 9
+    "contrastive autoencoder, encoder frozen", // Training 10
+    "contrastive autoencoder", // Training 11
+    "smooth autoencoder, encoder frozen", // Training 12
+    "smooth autoencoder", // Training 13
+    "larger LLM backbone Gemma-2-2B", // Training 14
+    "λ_vel = 5.0, longer training", // Training 15
   ];
   const GIFS = [
     { file: "1.gif", label: "train_000001" },
