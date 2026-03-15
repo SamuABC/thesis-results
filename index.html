@@ -204,19 +204,19 @@
    * ─────────────
    * BASE_PATH  : path to the C-T2M_trainings folder (relative to index.html)
    * NUM_TRAININGS : number of training runs
-   * GIF_NAMES  : list of gif filenames inside each visualizations_best_epoch/ folder
+   * GIFS       : list of { file, label } for each gif in visualizations_best_epoch/
    *
-   * Update GIF_NAMES once you know the actual filenames inside the folders.
+   * Update GIFS once you know the actual filenames inside the folders.
    */
   const BASE_PATH = "C-T2M_trainings";
   const NUM_TRAININGS = 15;
-  const GIF_NAMES = [
-    "1.gif",
-    "2.gif",
-    "3.gif",
-    "4.gif",
-    "5.gif",
-    "6.gif"
+  const GIFS = [
+    { file: "1.gif", label: "train_000001" },
+    { file: "2.gif", label: "train_000002" },
+    { file: "3.gif", label: "train_000003" },
+    { file: "4.gif", label: "val_012698"   },
+    { file: "5.gif", label: "val_012808"   },
+    { file: "6.gif", label: "val_008646"   }
   ];
 
   // ── Build navigation ──────────────────────────────────────────────
@@ -272,14 +272,14 @@
     const strip = document.createElement("div");
     strip.className = "gif-strip";
 
-    GIF_NAMES.forEach((name, idx) => {
+    GIFS.forEach(({ file, label }) => {
       const item = document.createElement("div");
       item.className = "gif-item";
       item.innerHTML = `
-        <img src="${vizFolder}/${name}"
-             alt="Training ${i} – visualization ${idx + 1}"
+        <img src="${vizFolder}/${file}"
+             alt="Training ${i} – ${label}"
              loading="lazy" />
-        <span>Sample ${idx + 1}</span>
+        <span>${label}</span>
       `;
       strip.appendChild(item);
     });
