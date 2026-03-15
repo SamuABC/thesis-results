@@ -79,6 +79,11 @@
       font-size: 1.15rem;
       color: #f0f6fc;
     }
+    .training-desc {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: #8b949e;
+    }
 
     .section-body {
       padding: 1.25rem;
@@ -157,7 +162,7 @@
       gap: 0.35rem;
     }
     .gif-item img {
-      height: 220px;
+      height: 550px;
       width: auto;
       border-radius: 6px;
       border: 1px solid #30363d;
@@ -204,12 +209,31 @@
    * ─────────────
    * BASE_PATH  : path to the C-T2M_trainings folder (relative to index.html)
    * NUM_TRAININGS : number of training runs
+   * TRAINING_DESCRIPTIONS : short description for each training run (index 0 = Training 1).
+   *                         Leave a string empty ("") to show no description.
    * GIFS       : list of { file, label } for each gif in visualizations_best_epoch/
    *
-   * Update GIFS once you know the actual filenames inside the folders.
+   * Update TRAINING_DESCRIPTIONS and GIFS as needed.
    */
   const BASE_PATH = "C-T2M_trainings";
   const NUM_TRAININGS = 15;
+  const TRAINING_DESCRIPTIONS = [
+    "", // Training 1
+    "", // Training 2
+    "", // Training 3
+    "", // Training 4
+    "", // Training 5
+    "", // Training 6
+    "", // Training 7
+    "", // Training 8
+    "", // Training 9
+    "", // Training 10
+    "", // Training 11
+    "", // Training 12
+    "", // Training 13
+    "", // Training 14
+    "", // Training 15
+  ];
   const GIFS = [
     { file: "1.gif", label: "train_000001" },
     { file: "2.gif", label: "train_000002" },
@@ -242,9 +266,10 @@
     section.id = `training-${i}`;
 
     // ── Section header ───────────────────────────────────────────
+    const desc = TRAINING_DESCRIPTIONS[i - 1];
     const header = document.createElement("div");
     header.className = "section-header";
-    header.innerHTML = `<h2>Training ${i}</h2>`;
+    header.innerHTML = `<h2>Training ${i}${desc ? ` <span class="training-desc">(${desc})</span>` : ""}</h2>`;
     section.appendChild(header);
 
     // ── Section body ─────────────────────────────────────────────
