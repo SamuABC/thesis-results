@@ -218,21 +218,21 @@
   const BASE_PATH = "C-T2M_trainings";
   const NUM_TRAININGS = 15;
   const TRAINING_DESCRIPTIONS = [
-    "full teacher forcing (TF)", // Training 1
-    "TF ratio to 0.0", // Training 2
-    "TF ratio to 0.2", // Training 3
-    "λ_vel = 5.0", // Training 4
-    "λ_vel = 1.0", // Training 5
-    "λ_lang = 0.1", // Training 6
-    "λ_sem = 5.0", // Training 7
-    "λ_sem = 10.0", // Training 8
-    "λ_vel = 5.0, CFG enabled", // Training 9
-    "contrastive autoencoder, encoder frozen", // Training 10
-    "contrastive autoencoder", // Training 11
-    "smooth autoencoder, encoder frozen", // Training 12
-    "smooth autoencoder", // Training 13
-    "larger LLM backbone Gemma-2-2B", // Training 14
-    "λ_vel = 5.0, longer training", // Training 15
+    "full teacher forcing (TF), best_epoch = 80", // Training 1
+    "TF ratio to 0.0, best_epoch = 90", // Training 2
+    "TF ratio to 0.2, best_epoch = 100", // Training 3
+    "λ_vel = 5.0, best_epoch = 90", // Training 4
+    "λ_vel = 1.0, best_epoch = 80", // Training 5
+    "λ_lang = 0.1, best_epoch = 90", // Training 6
+    "λ_sem = 5.0, best_epoch = 70", // Training 7
+    "λ_sem = 10.0, best_epoch = 70", // Training 8
+    "λ_vel = 5.0, CFG enabled, best_epoch = 70", // Training 9
+    "λ_vel = 5.0, contrastive autoencoder, encoder frozen, best_epoch = 30", // Training 10
+    "λ_vel = 5.0, contrastive autoencoder, best_epoch = 100", // Training 11
+    "λ_vel = 5.0, smooth autoencoder, encoder frozen, best_epoch = 30", // Training 12
+    "λ_vel = 5.0, smooth autoencoder, best_epoch = 30", // Training 13
+    "λ_vel = 5.0, larger LLM backbone Gemma-2-2B, best_epoch = 10", // Training 14
+    "λ_vel = 5.0, longer training (400 epochs), best_epoch = 210", // Training 15
   ];
   const GIFS = [
     { file: "1.gif", label: "train_000001" },
